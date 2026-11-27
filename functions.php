@@ -69,6 +69,9 @@ function custom_scripts_method() {
 		wp_enqueue_style('index-style');
 		wp_enqueue_script('index-script');
     }
+
+	// Night mode overrides, loaded after the page stylesheet
+	wp_enqueue_style( 'night-style', get_stylesheet_directory_uri() . '/css/night.css', array(), '1', 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'custom_scripts_method' );
 
