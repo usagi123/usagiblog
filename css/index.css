@@ -300,6 +300,26 @@ a:hover:after, a:focus:after {
   background-color: #4ec8ff;
 }
 
+/* Sidebar search button: higher specificity so global .btn rules
+   inside post content (e.g. inline <style> blocks) can't restyle it */
+#sidebar .btn.continue-reading {
+  display: inline-block;
+  height: auto;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4ec8ff;
+  background: transparent;
+  border: 1px solid #4ec8ff;
+  border-radius: .25rem;
+}
+
+#sidebar .btn.continue-reading:hover {
+  color: #ffffff;
+  background: #4ec8ff;
+  border-color: #4ec8ff;
+}
+
 .right-button {
   text-align: right;
 }
