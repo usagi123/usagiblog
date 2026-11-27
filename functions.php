@@ -32,7 +32,7 @@ add_action( 'after_setup_theme', 'default_attachment_display_settings' );
 
 //Register custom css and js directories
 function custom_scripts_method() {
-    wp_register_style( 'index-style', get_stylesheet_directory_uri() . '/css/index.css', array(), '1', 'all' );
+    wp_register_style( 'index-style', get_stylesheet_directory_uri() . '/css/index.css', array(), '2', 'all' );
 	wp_register_style( 'stream-style', get_stylesheet_directory_uri() . '/css/twitchstream.css', array(), '1', 'all' );
     wp_register_style( 'gallery-style', get_stylesheet_directory_uri() . '/css/gallery.css', array(), '1', 'all' );
     wp_register_style( 'homepage-style', get_stylesheet_directory_uri() . '/css/homepage.css', array(), '1', 'all' );
