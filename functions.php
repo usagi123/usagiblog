@@ -171,5 +171,8 @@ function widget_setup() {
 		)
 	);
 }
-add_action('widgets_init','widget_setup')
+add_action('widgets_init','widget_setup');
+
+//Video player block (catbox.moe hosted videos)
+require_once get_template_directory() . '/blocks/video-player/video-player.php';
 ?>
