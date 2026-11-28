@@ -1,0 +1,215 @@
+/* Night mode
+   Active when <html data-theme="dark">. The attribute is set by the
+   inline script in header.php (saved choice, else the OS preference). */
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --night-bg: #121417;
+  --night-surface: #1c1f23;
+  --night-surface-2: #24282d;
+  --night-border: #33383e;
+  --night-text: #c3c8ce;
+  --night-text-strong: #e6e9ec;
+  --night-muted: #8f969d;
+  --night-accent: #4ec8ff;
+}
+
+html[data-theme="dark"] body {
+  background-color: var(--night-bg);
+  color: var(--night-text);
+}
+
+/* Title band under the header image */
+html[data-theme="dark"] .custom-title {
+  background-color: var(--night-surface);
+}
+
+/* Post column and sidebar */
+html[data-theme="dark"] .left-title {
+  border-right-color: var(--night-border);
+}
+
+html[data-theme="dark"] .left-title h6,
+html[data-theme="dark"] .borderBottom {
+  color: var(--night-muted);
+  border-bottom-color: var(--night-border);
+}
+
+html[data-theme="dark"] .left-title p,
+html[data-theme="dark"] .left-title li,
+html[data-theme="dark"] .right-title p,
+html[data-theme="dark"] .right-title ul,
+html[data-theme="dark"] .right-title a {
+  color: var(--night-text);
+}
+
+html[data-theme="dark"] .right-title a:hover {
+  color: var(--night-accent);
+}
+
+html[data-theme="dark"] .left-title h2,
+html[data-theme="dark"] .left-title h4,
+html[data-theme="dark"] .left-title h5 {
+  color: var(--night-text-strong);
+}
+
+html[data-theme="dark"] .wp-block-image figcaption,
+html[data-theme="dark"] figcaption {
+  color: var(--night-muted);
+}
+
+html[data-theme="dark"] hr {
+  border-top-color: var(--night-border);
+}
+
+html[data-theme="dark"] blockquote,
+html[data-theme="dark"] .wp-block-quote {
+  border-left-color: var(--night-border);
+  color: var(--night-text);
+}
+
+html[data-theme="dark"] pre,
+html[data-theme="dark"] .wp-block-code {
+  background-color: var(--night-surface);
+  color: var(--night-text-strong);
+  border-color: var(--night-border);
+}
+
+html[data-theme="dark"] .table,
+html[data-theme="dark"] table {
+  color: var(--night-text);
+}
+
+html[data-theme="dark"] .table td,
+html[data-theme="dark"] .table th,
+html[data-theme="dark"] .wp-block-table td,
+html[data-theme="dark"] .wp-block-table th {
+  border-color: var(--night-border);
+}
+
+/* Forms: search box and comment form */
+html[data-theme="dark"] .form-control {
+  background-color: var(--night-surface);
+  border-color: var(--night-border);
+  color: var(--night-text-strong);
+}
+
+html[data-theme="dark"] .form-control::placeholder {
+  color: var(--night-muted);
+}
+
+html[data-theme="dark"] .form-control:focus {
+  background-color: var(--night-surface-2);
+  border-color: var(--night-accent);
+  color: var(--night-text-strong);
+  box-shadow: 0 0 0 .2rem rgba(78, 200, 255, .25);
+}
+
+html[data-theme="dark"] label,
+html[data-theme="dark"] .comment-reply-title,
+html[data-theme="dark"] .logged-in-as {
+  color: var(--night-text);
+}
+
+/* Buttons: keep accent outline, but fill hover text with the dark bg */
+html[data-theme="dark"] .continue-reading:hover,
+html[data-theme="dark"] #sidebar .btn.continue-reading:hover {
+  color: var(--night-bg);
+}
+
+html[data-theme="dark"] .wp-block-button,
+html[data-theme="dark"] .wp-block-button__link {
+  background-color: transparent;
+}
+
+/* Pagination */
+html[data-theme="dark"] .page-link {
+  background-color: var(--night-surface);
+  border-color: var(--night-border);
+  color: var(--night-accent);
+}
+
+html[data-theme="dark"] .page-link:hover {
+  background-color: var(--night-surface-2);
+  border-color: var(--night-border);
+  color: var(--night-accent);
+}
+
+html[data-theme="dark"] .page-item.disabled .page-link {
+  background-color: var(--night-surface);
+  border-color: var(--night-border);
+  color: var(--night-muted);
+}
+
+html[data-theme="dark"] .page-item.active .page-link {
+  background-color: var(--night-accent);
+  border-color: var(--night-accent);
+  color: var(--night-bg);
+}
+
+/* Comments */
+html[data-theme="dark"] .comment {
+  border-left-color: var(--night-border);
+}
+
+html[data-theme="dark"] .comments-area {
+  border-top-color: var(--night-border);
+}
+
+/* Footer */
+html[data-theme="dark"] .bg-dark {
+  background-color: #0b0c0e !important;
+}
+
+/* Night mode toggle button (in the top navbar) */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin-left: 12px;
+  color: #fff;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, color .2s;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  color: #4ec8ff;
+  border-color: #4ec8ff;
+  outline: none;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Show the moon in day mode, the sun in night mode */
+.theme-toggle .icon-sun,
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+/* Mobile: sit next to the hamburger; desktop: after the menu */
+@media (max-width: 991.98px) {
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .theme-toggle {
+    order: 3;
+  }
+}
